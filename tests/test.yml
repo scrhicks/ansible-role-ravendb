@@ -1,0 +1,33 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+    - ansible-role-ravendb
+  vars:
+    ravedb:
+      setup:
+        version: '4.2.4'
+        install_dir: /opt
+        user: root
+        group: root
+
+        settings:
+          setup_mode: Secured
+          data_dir: /var/lib/ravendb
+          server_url: https://{{ ip_addr }}:443
+          server_url_tcp: tcp://{{ ip_addr }}:38888
+          public_server_url: https://{{ hostname }}:443
+          public_server_url_tcp: tcp://{{ hostname }}:38888
+          cluster_election_timeout_in_ms: 3000
+          license_eula_accepted: true
+          license_path: /vagrant/licenses/developer.lic
+          security_certificate_path: /vagrant/certs/server.pfx
+          security_certificate_password:
+          logs_path: /var/log/ravendb
+          logs_mode: Operations
+          logs_use_utc_time: true
+          logs_max_file_size_in_mb: 128
+          logs_retention_time_in_hrs: 72
+      
+      rvn:
+        trusted_cert_path: /vagrant/certs/client.pfx
