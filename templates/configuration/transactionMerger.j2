@@ -1,0 +1,9 @@
+{%- if ravendb.configuration.transactionMerger.maxTimeToWaitForPreviousTxInMs is defined -%}
+    ,"TransactionMerger.MaxTimeToWaitForPreviousTxInMs": {{ ravendb.configuration.transactionMerger.maxTimeToWaitForPreviousTxInMs }}
+{% endif %}
+{%- if ravendb.configuration.transactionMerger.maxTimeToWaitForPreviousTxBeforeRejectingInMs is defined -%}
+    ,"TransactionMerger.MaxTimeToWaitForPreviousTxBeforeRejectingInMs": {{ ravendb.configuration.transactionMerger.maxTimeToWaitForPreviousTxBeforeRejectingInMs }}
+{% endif %}
+{%- if ravendb.configuration.transactionMerger.maxTxSizeInMb is defined -%}
+    ,"TransactionMerger.MaxTxSizeInMb": {{ ravendb.configuration.transactionMerger.maxTxSizeInMb }}
+{% endif %}

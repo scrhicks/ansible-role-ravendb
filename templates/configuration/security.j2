@@ -1,0 +1,66 @@
+{%- if ravendb.configuration.security.unsecuredAccessAllowed is defined -%}
+    ,"Security.UnsecuredAccessAllowed": "{{ ravendb.configuration.security.unsecuredAccessAllowed }}"
+{% endif %}
+{%- if ravendb.configuration.security.doNotConsiderMemoryLockFailureAsCatastrophicError is defined -%}
+    ,"Security.DoNotConsiderMemoryLockFailureAsCatastrophicError": {{ ravendb.configuration.security.doNotConsiderMemoryLockFailureAsCatastrophicError | lower }}
+{% endif %}
+{%- if ravendb.configuration.security.disableHttpsRedirection is defined -%}
+    ,"Security.DisableHttpsRedirection": {{ ravendb.configuration.security.disableHttpsRedirection | lower }}
+{% endif %}
+{%- if ravendb.configuration.security.wellKnownCertificatesAdmin is defined -%}
+    ,"Security.WellKnownCertificates.Admin": "{{ ravendb.configuration.security.wellKnownCertificatesAdmin }}"
+{% endif %}
+{%- if ravendb.configuration.security.certificate.path is defined -%}
+    ,"Security.Certificate.Path": "{{ ravendb.configuration.security.certificate.path }}"
+{% endif %}
+{%- if ravendb.configuration.security.certificate.password is defined -%}
+    ,"Security.Certificate.Password": "{{ ravendb.configuration.security.certificate.password }}"
+{% endif %}
+{%- if ravendb.configuration.security.certificate.exec is defined -%}
+    ,"Security.Certificate.Exec": "{{ ravendb.configuration.security.certificate.exec }}"
+{% endif %}
+{%- if ravendb.configuration.security.certificate.execArguments is defined -%}
+    ,"Security.Certificate.Exec.Arguments": "{{ ravendb.configuration.security.certificate.execArguments }}"
+{% endif %}
+{%- if ravendb.configuration.security.certificate.execTimeoutInSec is defined -%}
+    ,"Security.Certificate.Exec.TimeoutInSec": {{ ravendb.configuration.security.certificate.execTimeoutInSec }}
+{% endif %}
+{%- if ravendb.configuration.security.certificate.loadExec is defined -%}
+    ,"Security.Certificate.Load.Exec": "{{ ravendb.configuration.security.certificate.loadExec }}"
+{% endif %}
+{%- if ravendb.configuration.security.certificate.loadExecArguments is defined -%}
+    ,"Security.Certificate.Load.Exec.Arguments": "{{ ravendb.configuration.security.certificate.loadExecArguments }}"
+{% endif %}
+{%- if ravendb.configuration.security.certificate.renewExec is defined -%}
+    ,"Security.Certificate.Renew.Exec": "{{ ravendb.configuration.security.certificate.renewExec }}"
+{% endif %}
+{%- if ravendb.configuration.security.certificate.renewExecArguments is defined -%}
+    ,"Security.Certificate.Renew.Exec.Arguments": "{{ ravendb.configuration.security.certificate.renewExecArguments }}"
+{% endif %}
+{%- if ravendb.configuration.security.certificate.changeExec is defined -%}
+    ,"Security.Certificate.Change.Exec": "{{ ravendb.configuration.security.certificate.changeExec }}"
+{% endif %}
+{%- if ravendb.configuration.security.certificate.changeExecArguments is defined -%}
+    ,"Security.Certificate.Change.Exec.Arguments": "{{ ravendb.configuration.security.certificate.changeExecArguments }}"
+{% endif %}
+{%- if ravendb.configuration.security.certificate.letsEncryptEmail is defined -%}
+    ,"Security.Certificate.LetsEncrypt.Email": "{{ ravendb.configuration.security.certificate.letsEncryptEmail }}"
+{% endif %}
+{%- if ravendb.configuration.security.masterKey.path is defined -%}
+    ,"Security.MasterKey.Path": "{{ ravendb.configuration.security.masterKey.path }}"
+{% endif %}
+{%- if ravendb.configuration.security.masterKey.exec is defined -%}
+    ,"Security.MasterKey.Exec": "{{ ravendb.configuration.security.masterKey.exec }}"
+{% endif %}
+{%- if ravendb.configuration.security.masterKey.execArguments is defined -%}
+    ,"Security.MasterKey.Exec.Arguments": "{{ ravendb.configuration.security.masterKey.execArguments }}"
+{% endif %}
+{%- if ravendb.configuration.security.masterKey.execTimeoutInSec is defined -%}
+    ,"Security.MasterKey.Exec.TimeoutInSec": {{ ravendb.configuration.security.masterKey.execTimeoutInSec }}
+{% endif %}
+{%- if ravendb.configuration.security.auditLog.folderPath is defined -%}
+    ,"Security.AuditLog.FolderPath": "{{ ravendb.configuration.security.auditLog.folderPath }}"
+{% endif %}
+{%- if ravendb.configuration.security.auditLog.retentionTimeInHours is defined -%}
+    ,"Security.AuditLog.RetentionTimeInHours": {{ ravendb.configuration.security.auditLog.retentionTimeInHours }}
+{% endif %}

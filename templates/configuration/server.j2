@@ -1,0 +1,12 @@
+{%- if ravendb.configuration.server.maxTimeForTaskToWaitForDatabaseToLoadInSec is defined -%}
+    ,"Server.MaxTimeForTaskToWaitForDatabaseToLoadInSec": {{ ravendb.configuration.server.maxTimeForTaskToWaitForDatabaseToLoadInSec }}
+{% endif %}
+{%- if ravendb.configuration.server.processAffinityMask is defined -%}
+    ,"Server.ProcessAffinityMask": {{ ravendb.configuration.server.processAffinityMask }}
+{% endif %}
+{%- if ravendb.configuration.server.indexingAffinityMask is defined -%}
+    ,"Server.IndexingAffinityMask": {{ ravendb.configuration.server.indexingAffinityMask }}
+{% endif %}
+{%- if ravendb.configuration.server.numberOfUnusedCoresByIndexes is defined -%}
+    ,"Server.NumberOfUnusedCoresByIndexes": {{ ravendb.configuration.server.numberOfUnusedCoresByIndexes }}
+{% endif %}

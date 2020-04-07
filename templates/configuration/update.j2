@@ -1,0 +1,6 @@
+{%- if ravendb.configuration.update.channel is defined -%}
+    ,"Updates.Channel": "{{ ravendb.configuration.update.channel }}"
+{% endif %}
+{%- if ravendb.configuration.update.backgroundChecksDisable is defined -%}
+    ,"Updates.BackgroundChecks.Disable": {{ ravendb.configuration.update.backgroundChecksDisable | lower }}
+{% endif %}

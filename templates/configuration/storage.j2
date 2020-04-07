@@ -1,0 +1,42 @@
+{%- if ravendb.configuration.storage.tempPath is defined -%}
+    ,"Storage.TempPath": "{{ ravendb.configuration.storage.tempPath }}"
+{% endif %}
+{%- if ravendb.configuration.storage.transactionsModeDurationInMin is defined -%}
+    ,"Storage.TransactionsModeDurationInMin": {{ ravendb.configuration.storage.transactionsModeDurationInMin }}
+{% endif %}
+{%- if ravendb.configuration.storage.maxConcurrentFlushes is defined -%}
+    ,"Storage.MaxConcurrentFlushes": {{ ravendb.configuration.storage.maxConcurrentFlushes }}
+{% endif %}
+{%- if ravendb.configuration.storage.timeToSyncAfterFlushInSec is defined -%}
+    ,"Storage.TimeToSyncAfterFlushInSec": {{ ravendb.configuration.storage.timeToSyncAfterFlushInSec }}
+{% endif %}
+{%- if ravendb.configuration.storage.numberOfConcurrentSyncsPerPhysicalDrive is defined -%}
+    ,"Storage.NumberOfConcurrentSyncsPerPhysicalDrive": {{ ravendb.configuration.storage.numberOfConcurrentSyncsPerPhysicalDrive }}
+{% endif %}
+{%- if ravendb.configuration.storage.compressTxAboveSizeInKb is defined -%}
+    ,"Storage.CompressTxAboveSizeInKb": {{ ravendb.configuration.storage.compressTxAboveSizeInKb }}
+{% endif %}
+{%- if ravendb.configuration.storage.forceUsing32BitsPager is defined -%}
+    ,"Storage.ForceUsing32BitsPager": {{ ravendb.configuration.storage.forceUsing32BitsPager | lower }}
+{% endif %}
+{%- if ravendb.configuration.storage.maxScratchBufferSizeInMb is defined -%}
+    ,"Storage.MaxScratchBufferSizeInMb": {{ ravendb.configuration.storage.maxScratchBufferSizeInMb }}
+{% endif %}
+{%- if ravendb.configuration.storage.prefetchBatchSizeInKb is defined -%}
+    ,"Storage.PrefetchBatchSizeInKb": {{ ravendb.configuration.storage.prefetchBatchSizeInKb }}
+{% endif %}
+{%- if ravendb.configuration.storage.prefetchResetThresholdInGb is defined -%}
+    ,"Storage.PrefetchResetThresholdInGb": {{ ravendb.configuration.storage.prefetchResetThresholdInGb }}
+{% endif %}
+{%- if ravendb.configuration.storage.enablePrefetching is defined -%}
+    ,"Storage.EnablePrefetching": {{ ravendb.configuration.storage.enablePrefetching | lower }}
+{% endif %}
+{%- if ravendb.configuration.storage.onDirectoryInitialize.exec is defined -%}
+    ,"Storage.OnDirectoryInitialize.Exec": "{{ ravendb.configuration.storage.onDirectoryInitialize.exec }}"
+{% endif %}
+{%- if ravendb.configuration.storage.onDirectoryInitialize.execArguments is defined -%}
+    ,"Storage.OnDirectoryInitialize.Exec.Arguments": "{{ ravendb.configuration.storage.onDirectoryInitialize.execArguments }}"
+{% endif %}
+{%- if ravendb.configuration.storage.onDirectoryInitialize.execTimeoutInSec is defined -%}
+    ,"Storage.OnDirectoryInitialize.Exec.TimeoutInSec": {{ ravendb.configuration.storage.onDirectoryInitialize.execTimeoutInSec }}
+{% endif %}

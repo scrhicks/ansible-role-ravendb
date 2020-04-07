@@ -1,0 +1,9 @@
+{%- if ravendb.configuration.patching.maxStepsForScript is defined -%}
+    ,"Patching.MaxStepsForScript": {{ ravendb.configuration.patching.maxStepsForScript }}
+{% endif %}
+{%- if ravendb.configuration.patching.maxNumberOfCachedScripts is defined -%}
+    ,"Patching.MaxNumberOfCachedScripts": {{ ravendb.configuration.patching.maxNumberOfCachedScripts }}
+{% endif %}
+{%- if ravendb.configuration.patching.strictMode is defined -%}
+    ,"Patching.StrictMode": {{ ravendb.configuration.patching.strictMode | lower }}
+{% endif %}

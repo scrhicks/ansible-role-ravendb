@@ -1,0 +1,15 @@
+{%- if ravendb.configuration.monitoring.snmp.enabled is defined -%}
+    ,"Monitoring.Snmp.Enabled": {{ ravendb.configuration.monitoring.snmp.enabled | lower }}
+{% endif %}
+{%- if ravendb.configuration.monitoring.snmp.port is defined -%}
+    ,"Monitoring.Snmp.Port": {{ ravendb.configuration.monitoring.snmp.port }}
+{% endif %}
+{%- if ravendb.configuration.monitoring.snmp.community is defined -%}
+    ,"Monitoring.Snmp.Community": "{{ ravendb.configuration.monitoring.snmp.community }}"
+{% endif %}
+{%- if ravendb.configuration.monitoring.cpu.exec is defined -%}
+    ,"Monitoring.Cpu.Exec": "{{ ravendb.configuration.monitoring.cpu.exec }}"
+{% endif %}
+{%- if ravendb.configuration.monitoring.cpu.execArguments is defined -%}
+    ,"Monitoring.Cpu.Exec.Arguments": "{{ ravendb.configuration.monitoring.cpu.execArguments }}"
+{% endif %}

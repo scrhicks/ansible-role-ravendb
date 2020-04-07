@@ -1,0 +1,3 @@
+{%- if ravendb.configuration.tombstone.cleanupIntervalInMin is defined -%}
+    ,"Tombstones.CleanupIntervalInMin": {{ ravendb.configuration.tombstone.cleanupIntervalInMin }}
+{% endif %}

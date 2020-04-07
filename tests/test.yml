@@ -1,33 +1,199 @@
 ---
+
 - hosts: localhost
   become: yes
   roles:
-    - ansible-role-ravendb
+    - ravendb
   vars:
-    ravedb:
-      setup:
-        version: '4.2.4'
-        install_dir: /opt
-        user: root
-        group: root
+    ravendb:
+      version: '4.2.8'
+      install_dir: /opt
 
-        settings:
-          setup_mode: Secured
-          data_dir: /var/lib/ravendb
-          server_url: https://{{ ip_addr }}:443
-          server_url_tcp: tcp://{{ ip_addr }}:38888
-          public_server_url: https://{{ hostname }}:443
-          public_server_url_tcp: tcp://{{ hostname }}:38888
-          cluster_election_timeout_in_ms: 3000
-          license_eula_accepted: true
-          license_path: /vagrant/licenses/developer.lic
-          security_certificate_path: /vagrant/certs/server.pfx
-          security_certificate_password:
-          logs_path: /var/log/ravendb
-          logs_mode: Operations
-          logs_use_utc_time: true
-          logs_max_file_size_in_mb: 128
-          logs_retention_time_in_hrs: 72
+      configuration:
+        licenseEulaAccepted: true
+        # backup:
+        #   server:
+        #     localRootPath: ""
+        #     allowedDestinations: ""
+        #     allowedAwsRegions: ""
+        # cluster:
+        #   electionTimeoutInMs: 300
+        #   workerSamplePeriodInMs: 250
+        #   supervisorSamplePeriodInMs: 500
+        #   receiveFromWorkerTimeoutInMs: 5000
+        #   onErrorDelayTimeInMs: 5000
+        #   operationTimeoutInSec: 15
+        #   statsStabilizationTimeInSec: 5
+        #   timeBeforeAddingReplicaInSec: 900
+        #   tcpTimeoutInMs: 15000
+        #   hardDeleteOnReplacement: true
+        core:
+          serverUrl: https://{{ ip_addr }}:443
+          serverUrlTcp: tcp://{{ ip_addr }}:38888
+          publicServerUrl: https://{{ hostname }}:443
+          publicServerUrlTcp: tcp://{{ hostname }}:38888
+          #externalIp: null
+          #runInMemory: null
+          dataDir: /var/lib/ravendb
+          setupMode: Secured
+          #acmeUrl: https://acme-v01.api.letsencrypt.org/directory
+          #ThrowIfAnyIndexCannotBeOpened: false
+          #featuresAvailability: Stable
+        # database:
+        #   queryTimeoutInSec: 200
+        #   queryOperationTimeoutInSec: 22
+        #   operationTimeoutInSec: 22
+        #   collectionOperationTimeoutInSec: 22
+        #   concurrentLoadTimeoutInSec: 22
+        #   maxConcurrentLoads: 22
+        #   maxIdleTimeInSec: 22
+        #   frequencyToCheckForIdleDatabasesInSec: 22
+        # etl:
+        #   sqlcommandTimeoutInSec: 22
+        #   extractAndTransformTimeoutInSec: 22
+        #   maxNumberOfExtractedDocuments: 22
+        #   maxNumberOfExtractedItems: 22
+        #   maxBatchSizeInMb: 22
+        #   maxFallbackTimeInSec: 22
+        # http:
+        #   minDataRateBytesPerSec: 2
+        #   minDataRateGracePeriodInSec: 22
+        #   maxRequestBufferSizeInKb: 22
+        #   maxRequestLineSizeInKb: 23
+        #   useResponseCompression: false
+        #   allowResponseCompressionOverHttps: false
+        #   gzipResponseCompressionLevel: ""
+        #   deflateResponseCompressionLevel: ""
+        #   staticFilesResponseCompressionLevel: ""
+        # indexing:
+        #   runInMemory: false
+        #   disable: false
+        #   tempPath: ""
+        #   maxTimeForDocumentTransactionToRemainOpenInSec: 22
+        #   timeBeforeDeletionOfSupersededAutoIndexInSec: 22
+        #   timeToWaitBeforeMarkingAutoIndexAsIdleInMin: 22
+        #   disableQueryOptimizerGeneratedIndexes: false
+        #   timeToWaitBeforeDeletingAutoIndexMarkedAsIdleInHrs: 22
+        #   minNumberOfMapAttemptsAfterWhichBatchWillBeCanceledIfRunningLowOnMemory: 22
+        #   numberOfConcurrentStoppedBatchesIfRunningLowOnMemory: 22
+        #   mapTimeoutInSec: 22
+        #   mapTimeoutAfterEtagReachedInMin: 22
+        #   maxStepsForScript: 22
+        #   cleanupIntervalInMin: 22
+        #   transactionSizeLimitInMb: 22
+        #   encryptedTransactionSizeLimitInMb: 22
+        #   scratchSpaceLimitInMb: 22
+        #   globalScratchSpaceLimitInMb: 22
+        #   maxTimeToWaitAfterFlushAndSyncWhenExceedingScratchSpaceLimit: 22
+        #   mapBatchSize: 22
+        #   maxGram: 22
+        #   minGram: 22
+        license:
+          path: /home/vagrant/developer.lic
+        #   canActivate: true
+        #   canForceUpdate: true
+        #   canRenewLicense: true
+        #   skipLeasingErrorsLogging: false
+        logs:
+          path: /var/log/ravendb
+          mode: Operations
+          useUtcTime: true
+          maxFileSizeInMb: 128
+          retentionTimeInHrs: 72
+        # memory:
+        #   lowMemoryLimitInMb: 0
+        #   lowMemoryCommitLimitInMb: 0
+        #   minimumFreeCommittedMemoryPercentage: 0
+        #   maxFreeCommittedMemoryToKeepInMb: 0
+        # monitoring:
+        #   snmp:
+        #     enabled: false
+        #     port: 0
+        #     community: ""
+        #   cpu:
+        #     exec: ""
+        #     execArguments: ""
+        # patching:
+        #   maxStepsForScript: 0
+        #   maxNumberOfCachedScripts: 0
+        #   strictMode: 0
+        # performanceHints:
+        #   documents:
+        #     hugeDocumentSizeInMb: 0
+        #     hugeDocumentsCollectionSize: 0
+        #   indexing:
+        #     maxIndexOutputsPerDocument: 0
+        #   maxNumberOfResults: 0
+        #   tooLongRequestThresholdInSec: 0
+        # query:
+        #   maxClauseCount: 0
+        # replication:
+        #   activeConnectionTimeoutInSec: 0
+        #   replicationMinimalHeartbeatInSec: 0
+        #   retryReplicateAfterInSec: 0
+        #   retryMaxTimeoutInSec: 0
+        #   maxItemsCount: 0
+        #   maxSizeToSendInMb: 0
+        security:
+          # unsecuredAccessAllowed: ""
+          # doNotConsiderMemoryLockFailureAsCatastrophicError: false
+          # disableHttpsRedirection: false
+          # wellKnownCertificatesAdmin: ""
+          certificate:
+            path: /home/vagrant/server.pfx
+          #   password: ""
+          #   exec: ""
+          #   execArguments: ""
+          #   execTimeoutInSec: ""
+          #   loadExec: ""
+          #   loadExecArguments: ""
+          #   renewExec: ""
+          #   renewExecArguments: ""
+          #   changeExec: ""
+          #   changeExecArguments: ""
+          #   letsEncryptEmail: ""
+          # masterKey:
+          #   path: ""
+          #   exec: ""
+          #   execArguments: ""
+          #   execTimeoutInSec: 0
+          # auditLog:
+          #   folderPath: ""
+          #   retentionTimeInHours: 0
+        # server:
+        #   maxTimeForTaskToWaitForDatabaseToLoadInSec: 0
+        #   processAffinityMask: 0
+        #   indexingAffinityMask: 0
+        #   numberOfUnusedCoresByIndexes: 0
+        # storage:
+        #   tempPath: ""
+        #   transactionsModeDurationInMin: 0
+        #   maxConcurrentFlushes: 0
+        #   timeToSyncAfterFlushInSec: 0
+        #   numberOfConcurrentSyncsPerPhysicalDrive: 0
+        #   compressTxAboveSizeInKb: 0
+        #   forceUsing32BitsPager: false
+        #   maxScratchBufferSizeInMb: 0
+        #   prefetchBatchSizeInKb: 0
+        #   prefetchResetThresholdInGb: 0
+        #   enablePrefetching: false
+        #   onDirectoryInitialize:
+        #     exec: ""
+        #     execArguments: ""
+        #     execTimeoutInSec: ""
+        # studio:
+        #   path: ""
+        # subscription:
+        #   maxNumberOfConcurrentConnections: 0
+        # tombstone:
+        #   cleanupIntervalInMin: 0
+        # transactionMerger:
+        #   maxTimeToWaitForPreviousTxInMs: 0
+        #   maxTimeToWaitForPreviousTxBeforeRejectingInMs: 0
+        #   maxTxSizeInMb: 0
+        # update:
+        #   channel: ""
+        #   backgroundChecksDisable: false
       
       rvn:
-        trusted_cert_path: /vagrant/certs/client.pfx
+        trust_client_cert: /home/vagrant/client.pfx

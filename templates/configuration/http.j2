@@ -1,0 +1,27 @@
+{%- if ravendb.configuration.http.minDataRateBytesPerSec is defined -%}
+    ,"Http.MinDataRateBytesPerSec": {{ ravendb.configuration.http.minDataRateBytesPerSec }}
+{% endif %}
+{%- if ravendb.configuration.http.minDataRateGracePeriodInSec is defined -%}
+    ,"Http.MinDataRateGracePeriodInSec": {{ ravendb.configuration.http.minDataRateGracePeriodInSec }}
+{% endif %}
+{%- if ravendb.configuration.http.maxRequestBufferSizeInKb is defined -%}
+    ,"Http.MaxRequestBufferSizeInKb": {{ ravendb.configuration.http.maxRequestBufferSizeInKb }}
+{% endif %}
+{%- if ravendb.configuration.http.maxRequestLineSizeInKb is defined -%}
+    ,"Http.MaxRequestLineSizeInKb": {{ ravendb.configuration.http.maxRequestLineSizeInKb }}
+{% endif %}
+{%- if ravendb.configuration.http.useResponseCompression is defined -%}
+    ,"Http.UseResponseCompression": {{ ravendb.configuration.http.useResponseCompression | lower }}
+{% endif %}
+{%- if ravendb.configuration.http.allowResponseCompressionOverHttps is defined -%}
+    ,"Http.AllowResponseCompressionOverHttps": {{ ravendb.configuration.http.allowResponseCompressionOverHttps | lower }}
+{% endif %}
+{%- if ravendb.configuration.http.gzipResponseCompressionLevel is defined -%}
+    ,"Http.GzipResponseCompressionLevel": "{{ ravendb.configuration.http.gzipResponseCompressionLevel }}"
+{% endif %}
+{%- if ravendb.configuration.http.deflateResponseCompressionLevel is defined -%}
+    ,"Http.DeflateResponseCompressionLevel": "{{ ravendb.configuration.http.deflateResponseCompressionLevel }}"
+{% endif %}
+{%- if ravendb.configuration.http.staticFilesResponseCompressionLevel is defined -%}
+    ,"Http.StaticFilesResponseCompressionLevel": "{{ ravendb.configuration.http.staticFilesResponseCompressionLevel }}"
+{% endif %}

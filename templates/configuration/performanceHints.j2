@@ -1,0 +1,19 @@
+{%- if ravendb.configuration.performanceHints.documents.hugeDocumentSizeInMb is defined -%}
+    ,"PerformanceHints.Documents.HugeDocumentSizeInMb": {{ ravendb.configuration.performanceHints.documents.hugeDocumentSizeInMb }}
+{% endif %}
+{%- if ravendb.configuration.performanceHints.documents.hugeDocumentsCollectionSize is defined -%}
+    ,"PerformanceHints.Documents.HugeDocumentsCollectionSize": {{ ravendb.configuration.performanceHints.documents.hugeDocumentsCollectionSize }}
+{% endif %}
+{%- if ravendb.configuration.performanceHints.indexing.maxIndexOutputsPerDocument is defined -%}
+    ,"PerformanceHints.Indexing.MaxIndexOutputsPerDocument": {{ ravendb.configuration.performanceHints.indexing.maxIndexOutputsPerDocument }}
+{% endif %}
+{%- if ravendb.configuration.performanceHints.maxNumberOfResults is defined -%}
+    ,"PerformanceHints.MaxNumberOfResults": {{ ravendb.configuration.performanceHints.maxNumberOfResults }}
+{% endif %}
+{%- if ravendb.configuration.performanceHints.tooLongRequestThresholdInSec is defined -%}
+    ,"PerformanceHints.TooLongRequestThresholdInSec": {{ ravendb.configuration.performanceHints.tooLongRequestThresholdInSec }}
+{% endif %}
+
+{%- if ravendb.configuration.query.maxClauseCount is defined -%}
+    ,"Query.MaxClauseCount": {{ ravendb.configuration.query.maxClauseCount }}
+{% endif %}

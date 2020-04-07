@@ -1,0 +1,18 @@
+{%- if ravendb.configuration.etl.sqlcommandTimeoutInSec is defined -%}
+    ,"ETL.SQL.CommandTimeoutInSec": {{ ravendb.configuration.etl.sqlcommandTimeoutInSec }}
+{% endif %}
+{%- if ravendb.configuration.etl.extractAndTransformTimeoutInSec is defined -%}
+    ,"ETL.ExtractAndTransformTimeoutInSec": {{ ravendb.configuration.etl.extractAndTransformTimeoutInSec }}
+{% endif %}
+{%- if ravendb.configuration.etl.maxNumberOfExtractedDocuments is defined -%}
+    ,"ETL.MaxNumberOfExtractedDocuments": {{ ravendb.configuration.etl.maxNumberOfExtractedDocuments }}
+{% endif %}
+{%- if ravendb.configuration.etl.maxNumberOfExtractedItems is defined -%}
+    ,"ETL.MaxNumberOfExtractedItems": {{ ravendb.configuration.etl.maxNumberOfExtractedItems }}
+{% endif %}
+{%- if ravendb.configuration.etl.maxBatchSizeInMb is defined -%}
+    ,"ETL.MaxBatchSizeInMb": {{ ravendb.configuration.etl.maxBatchSizeInMb }}
+{% endif %}
+{%- if ravendb.configuration.etl.maxFallbackTimeInSec is defined -%}
+    ,"ETL.MaxFallbackTimeInSec": {{ ravendb.configuration.etl.maxFallbackTimeInSec }}
+{% endif %}
