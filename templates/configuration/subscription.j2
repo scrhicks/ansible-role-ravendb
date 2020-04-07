@@ -1,0 +1,3 @@
+{%- if ravendb.configuration.subscription.maxNumberOfConcurrentConnections is defined -%}
+    ,"Subscriptions.MaxNumberOfConcurrentConnections": {{ ravendb.configuration.subscription.maxNumberOfConcurrentConnections }}
+{% endif %}

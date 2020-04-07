@@ -1,0 +1,9 @@
+{%- if ravendb.configuration.backup.server.localRootPath is defined -%}
+    ,"Server.LocalRootPath": "{{ ravendb.configuration.backup.server.localRootPath }}"
+{% endif%}
+{%- if ravendb.configuration.backup.server.allowedDestinations is defined -%}
+    ,"Server.AllowedDestinations": "{{ ravendb.configuration.backup.server.allowedDestinations }}"
+{% endif%}
+{%- if configuration.backup.server.allowedAwsRegions is defined -%}
+    ,"Server.AllowedAwsRegions": "{{ ravendb.configuration.backup.server.allowedAwsRegions }}"
+{% endif%}

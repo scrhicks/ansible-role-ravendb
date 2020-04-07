@@ -1,0 +1,30 @@
+{%- if ravendb.configuration.cluster.electionTimeoutInMs is defined -%}
+    ,"Cluster.ElectionTimeoutInMs": {{ ravendb.configuration.cluster.electionTimeoutInMs }},
+{% endif %}
+{%- if ravendb.configuration.cluster.workerSamplePeriodInMs is defined -%}
+    "Cluster.WorkerSamplePeriodInMs": {{ ravendb.configuration.cluster.workerSamplePeriodInMs }}
+{% endif %}
+{%- if ravendb.configuration.cluster.supervisorSamplePeriodInMs is defined -%}
+    ,"Cluster.SupervisorSamplePeriodInMs": {{ ravendb.configuration.cluster.supervisorSamplePeriodInMs }}
+{% endif %}
+{%- if ravendb.configuration.cluster.receiveFromWorkerTimeoutInMs is defined -%}
+    ,"Cluster.ReceiveFromWorkerTimeoutInMs": {{ ravendb.configuration.cluster.receiveFromWorkerTimeoutInMs }}
+{% endif %}
+{%- if ravendb.configuration.cluster.onErrorDelayTimeInMs is defined -%}
+    ,"Cluster.OnErrorDelayTimeInMs": {{ ravendb.configuration.cluster.onErrorDelayTimeInMs }}
+{% endif %}
+{%- if ravendb.configuration.cluster.operationTimeoutInSec is defined -%}
+    ,"Cluster.OperationTimeoutInSec": {{ ravendb.configuration.cluster.operationTimeoutInSec }}
+{% endif %}
+{%- if ravendb.configuration.cluster.statsStabilizationTimeInSec is defined -%}
+    ,"Cluster.StatsStabilizationTimeInSec": {{ ravendb.configuration.cluster.statsStabilizationTimeInSec }}
+{% endif %}
+{%- if ravendb.configuration.cluster.timeBeforeAddingReplicaInSec is defined -%}
+    ,"Cluster.TimeBeforeAddingReplicaInSec": {{ ravendb.configuration.cluster.timeBeforeAddingReplicaInSec }}
+{% endif %}
+{%- if ravendb.configuration.cluster.tcpTimeoutInMs is defined -%}
+    ,"Cluster.TcpTimeoutInMs": {{ ravendb.configuration.cluster.tcpTimeoutInMs }}
+{% endif %}
+{%- if ravendb.configuration.cluster.hardDeleteOnReplacement is defined -%}
+    ,"Cluster.HardDeleteOnReplacement": {{ ravendb.configuration.cluster.hardDeleteOnReplacement | lower }}
+{% endif %}

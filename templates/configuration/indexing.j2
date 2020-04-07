@@ -1,0 +1,66 @@
+{%- if ravendb.configuration.indexing.runInMemory is defined -%}
+    ,"Indexing.RunInMemory": {{ ravendb.configuration.indexing.runInMemory | lower }}
+{% endif %}
+{%- if ravendb.configuration.indexing.disable is defined -%}
+    ,"Indexing.Disable": {{ ravendb.configuration.indexing.disable | lower }}
+{% endif %}
+{%- if ravendb.configuration.indexing.tempPath is defined -%}
+    ,"Indexing.TempPath": "{{ ravendb.configuration.indexing.tempPath }}"
+{% endif %}
+{%- if ravendb.configuration.indexing.maxTimeForDocumentTransactionToRemainOpenInSec is defined -%}
+    ,"Indexing.MaxTimeForDocumentTransactionToRemainOpenInSec": {{ ravendb.configuration.indexing.maxTimeForDocumentTransactionToRemainOpenInSec }}
+{% endif %}
+{%- if ravendb.configuration.indexing.timeBeforeDeletionOfSupersededAutoIndexInSec is defined -%}
+    ,"Indexing.TimeBeforeDeletionOfSupersededAutoIndexInSec": {{ ravendb.configuration.indexing.timeBeforeDeletionOfSupersededAutoIndexInSec }}
+{% endif %}
+{%- if ravendb.configuration.indexing.timeToWaitBeforeMarkingAutoIndexAsIdleInMin is defined -%}
+    ,"Indexing.TimeToWaitBeforeMarkingAutoIndexAsIdleInMin": {{ ravendb.configuration.indexing.timeToWaitBeforeMarkingAutoIndexAsIdleInMin }}
+{% endif %}
+{%- if ravendb.configuration.indexing.disableQueryOptimizerGeneratedIndexes is defined -%}
+    ,"Indexing.DisableQueryOptimizerGeneratedIndexes": {{ ravendb.configuration.indexing.disableQueryOptimizerGeneratedIndexes | lower }}
+{% endif %}
+{%- if ravendb.configuration.indexing.timeToWaitBeforeDeletingAutoIndexMarkedAsIdleInHrs is defined -%}
+    ,"Indexing.TimeToWaitBeforeDeletingAutoIndexMarkedAsIdleInHrs": {{ ravendb.configuration.indexing.timeToWaitBeforeDeletingAutoIndexMarkedAsIdleInHrs }}
+{% endif %}
+{%- if ravendb.configuration.indexing.minNumberOfMapAttemptsAfterWhichBatchWillBeCanceledIfRunningLowOnMemory is defined -%}
+    ,"Indexing.MinNumberOfMapAttemptsAfterWhichBatchWillBeCanceledIfRunningLowOnMemory": {{ ravendb.configuration.indexing.minNumberOfMapAttemptsAfterWhichBatchWillBeCanceledIfRunningLowOnMemory }}
+{% endif %}
+{%- if ravendb.configuration.indexing.numberOfConcurrentStoppedBatchesIfRunningLowOnMemory is defined -%}
+    ,"Indexing.NumberOfConcurrentStoppedBatchesIfRunningLowOnMemory": {{ ravendb.configuration.indexing.numberOfConcurrentStoppedBatchesIfRunningLowOnMemory }}
+{% endif %}
+{%- if ravendb.configuration.indexing.mapTimeoutInSec is defined -%}
+    ,"Indexing.MapTimeoutInSec": {{ ravendb.configuration.indexing.mapTimeoutInSec }}
+{% endif %}
+{%- if ravendb.configuration.indexing.mapTimeoutAfterEtagReachedInMin is defined -%}
+    ,"Indexing.MapTimeoutAfterEtagReachedInMin": {{ ravendb.configuration.indexing.mapTimeoutAfterEtagReachedInMin }}
+{% endif %}
+{%- if ravendb.configuration.indexing.maxStepsForScript is defined -%}
+    ,"Indexing.MaxStepsForScript": {{ ravendb.configuration.indexing.maxStepsForScript }}
+{% endif %}
+{%- if ravendb.configuration.indexing.cleanupIntervalInMin is defined -%}
+    ,"Indexing.CleanupIntervalInMin": {{ ravendb.configuration.indexing.cleanupIntervalInMin }}
+{% endif %}
+{%- if ravendb.configuration.indexing.transactionSizeLimitInMb is defined -%}
+    ,"Indexing.TransactionSizeLimitInMb": {{ ravendb.configuration.indexing.transactionSizeLimitInMb }}
+{% endif %}
+{%- if ravendb.configuration.indexing.encryptedTransactionSizeLimitInMb is defined -%}
+    ,"Indexing.Encrypted.TransactionSizeLimitInMb": {{ ravendb.configuration.indexing.encryptedTransactionSizeLimitInMb }}
+{% endif %}
+{%- if ravendb.configuration.indexing.scratchSpaceLimitInMb is defined -%}
+    ,"Indexing.ScratchSpaceLimitInMb": {{ ravendb.configuration.indexing.scratchSpaceLimitInMb }}
+{% endif %}
+{%- if ravendb.configuration.indexing.globalScratchSpaceLimitInMb is defined -%}
+    ,"Indexing.GlobalScratchSpaceLimitInMb": {{ ravendb.configuration.indexing.globalScratchSpaceLimitInMb }}
+{% endif %}
+{%- if ravendb.configuration.indexing.maxTimeToWaitAfterFlushAndSyncWhenExceedingScratchSpaceLimit is defined -%}
+    ,"Indexing.MaxTimeToWaitAfterFlushAndSyncWhenExceedingScratchSpaceLimit": {{ ravendb.configuration.indexing.maxTimeToWaitAfterFlushAndSyncWhenExceedingScratchSpaceLimit }}
+{% endif %}
+{%- if ravendb.configuration.indexing.mapBatchSize is defined -%}
+    ,"Indexing.MapBatchSize": {{ ravendb.configuration.indexing.mapBatchSize }}
+{% endif %}
+{%- if ravendb.configuration.indexing.maxGram is defined -%}
+    ,"Indexing.MaxGram": {{ ravendb.configuration.indexing.maxGram }}
+{% endif %}
+{%- if ravendb.configuration.indexing.minGram is defined -%}
+    ,"Indexing.MinGram": {{ ravendb.configuration.indexing.minGram }}
+{% endif %}

@@ -1,9 +1,9 @@
 ---
 
 - name: Setup RavenDB
-  include: setup/install.yml
-  when: ravendb.setup is defined
+  include: install.yml
+  when: ravendb.configuration is defined
 
 - name: rvn
-  include: rvn/main.yml
+  include: trust_client_cert.yml
   when: ravendb.rvn is defined

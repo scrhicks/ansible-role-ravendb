@@ -1,0 +1,24 @@
+{%- if ravendb.configuration.database.queryTimeoutInSec is defined -%}
+    ,"Databases.QueryTimeoutInSec": {{ ravendb.configuration.database.queryTimeoutInSec }}
+{% endif %}
+{%- if ravendb.configuration.database.queryOperationTimeoutInSec is defined -%}
+    ,"Databases.QueryOperationTimeoutInSec": {{ ravendb.configuration.database.queryOperationTimeoutInSec }}
+{% endif %}
+{%- if ravendb.configuration.database.operationTimeoutInSec is defined -%}
+    ,"Databases.OperationTimeoutInSec": {{ ravendb.configuration.database.operationTimeoutInSec }}
+{% endif %}
+{%- if ravendb.configuration.database.collectionOperationTimeoutInSec is defined -%}
+    ,"Databases.CollectionOperationTimeoutInSec": {{ ravendb.configuration.database.collectionOperationTimeoutInSec }}
+{% endif %}
+{%- if ravendb.configuration.database.concurrentLoadTimeoutInSec is defined -%}
+    ,"Databases.ConcurrentLoadTimeoutInSec": {{ ravendb.configuration.database.concurrentLoadTimeoutInSec }}
+{% endif %}
+{%- if ravendb.configuration.database.maxConcurrentLoads is defined -%}
+    ,"Databases.MaxConcurrentLoads": {{ ravendb.configuration.database.maxConcurrentLoads }}
+{% endif %}
+{%- if ravendb.configuration.database.maxIdleTimeInSec is defined -%}
+    ,"Databases.MaxIdleTimeInSec": {{ ravendb.configuration.database.maxIdleTimeInSec }}
+{% endif %}
+{%- if ravendb.configuration.database.frequencyToCheckForIdleDatabasesInSec is defined -%}
+    ,"Databases.FrequencyToCheckForIdleDatabasesInSec": {{ ravendb.configuration.database.frequencyToCheckForIdleDatabasesInSec }}
+{% endif %}

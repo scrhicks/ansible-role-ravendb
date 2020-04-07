@@ -1,0 +1,28 @@
+{
+{%- if ravendb.configuration.licenseEulaAccepted is defined -%}
+    "License.Eula.Accepted": {{ ravendb.configuration.licenseEulaAccepted | lower }}
+{% endif %}
+
+{%- include "backup.j2" -%}
+{%- include "cluster.j2" -%}
+{%- include "core.j2" -%}
+{%- include "database.j2" -%}
+{%- include "etl.j2" -%}
+{%- include "http.j2" -%}
+{%- include "indexing.j2" -%}
+{%- include "license.j2" -%}
+{%- include "logs.j2" -%}
+{%- include "memory.j2" -%}
+{%- include "monitoring.j2" -%}
+{%- include "patching.j2" -%}
+{%- include "performanceHints.j2" -%}
+{%- include "replication.j2" -%}
+{%- include "security.j2" -%}
+{%- include "server.j2" -%}
+{%- include "storage.j2" -%}
+{%- include "studio.j2" -%}
+{%- include "subscription.j2" -%}
+{%- include "tombstone.j2" -%}
+{%- include "transactionMerger.j2" -%}
+{%- include "update.j2" -%}
+}

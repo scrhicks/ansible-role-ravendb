@@ -1,0 +1,33 @@
+{%- if ravendb.configuration.core.serverUrl is defined -%}
+    ,"ServerUrl": "{{ ravendb.configuration.core.serverUrl }}"
+{% endif %}
+{%- if ravendb.configuration.core.serverUrlTcp is defined -%}
+    ,"ServerUrl.Tcp": "{{ ravendb.configuration.core.serverUrlTcp }}"
+{% endif %}
+{%- if ravendb.configuration.core.publicServerUrl is defined -%}
+    ,"PublicServerUrl": "{{ ravendb.configuration.core.publicServerUrl }}"
+{% endif %}
+{%- if ravendb.configuration.core.publicServerUrlTcp is defined -%}
+    ,"PublicServerUrl.Tcp": "{{ ravendb.configuration.core.publicServerUrlTcp }}"
+{% endif %}
+{%- if ravendb.configuration.core.externalIp is defined -%}
+    ,"ExternalIp": "{{ ravendb.configuration.core.externalIp }}"
+{% endif %}
+{%- if ravendb.configuration.core.runInMemory is defined -%}
+    ,"RunInMemory": {{ ravendb.configuration.core.runInMemory | lower }}
+{% endif %}
+{%- if ravendb.configuration.core.dataDir is defined -%}
+    ,"DataDir": "{{ ravendb.configuration.core.dataDir }}"
+{% endif %}
+{%- if ravendb.configuration.core.setupMode is defined -%}
+    ,"Setup.Mode": "{{ ravendb.configuration.core.setupMode }}"
+{% endif %}
+{%- if ravendb.configuration.core.acmeUrl is defined -%}
+    ,"AcmeUrl": "{{ ravendb.configuration.core.acmeUrl }}"
+{% endif %}
+{%- if ravendb.configuration.core.ThrowIfAnyIndexCannotBeOpened is defined -%}
+    ,"ThrowIfAnyIndexCannotBeOpened": {{ ravendb.configuration.core.ThrowIfAnyIndexCannotBeOpened | lower }}
+{% endif %}
+{%- if ravendb.configuration.core.featuresAvailability is defined -%}
+    ,"Features.Availability": "{{ ravendb.configuration.core.featuresAvailability }}"
+{% endif %}

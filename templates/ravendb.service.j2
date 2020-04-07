@@ -10,8 +10,6 @@ LimitAS=infinity
 Restart=on-failure
 Type=simple
 ExecStart=/opt/RavenDB/run.sh
-User={{ ravedb.setup.user }}
-Group={{ ravedb.setup.group }}
 
 [Install]
 WantedBy=multi-user.target

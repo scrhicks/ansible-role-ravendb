@@ -1,0 +1,12 @@
+{%- if ravendb.configuration.memory.lowMemoryLimitInMb is defined -%}
+    ,"Memory.LowMemoryLimitInMb": {{ ravendb.configuration.memory.lowMemoryLimitInMb }}
+{% endif %}
+{%- if ravendb.configuration.memory.lowMemoryCommitLimitInMb is defined -%}
+    ,"Memory.LowMemoryCommitLimitInMb": {{ ravendb.configuration.memory.lowMemoryCommitLimitInMb }}
+{% endif %}
+{%- if ravendb.configuration.memory.minimumFreeCommittedMemoryPercentage is defined -%}
+    ,"Memory.MinimumFreeCommittedMemoryPercentage": {{ ravendb.configuration.memory.minimumFreeCommittedMemoryPercentage }}
+{% endif %}
+{%- if ravendb.configuration.memory.maxFreeCommittedMemoryToKeepInMb is defined -%}
+    ,"Memory.MaxFreeCommittedMemoryToKeepInMb": {{ ravendb.configuration.memory.maxFreeCommittedMemoryToKeepInMb }}
+{% endif %}

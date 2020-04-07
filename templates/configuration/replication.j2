@@ -1,0 +1,18 @@
+{%- if ravendb.configuration.replication.activeConnectionTimeoutInSec is defined -%}
+    ,"Replication.ActiveConnectionTimeoutInSec": {{ ravendb.configuration.replication.activeConnectionTimeoutInSec }}
+{% endif %}
+{%- if ravendb.configuration.replication.replicationMinimalHeartbeatInSec is defined -%}
+    ,"Replication.ReplicationMinimalHeartbeatInSec": {{ ravendb.configuration.replication.replicationMinimalHeartbeatInSec }}
+{% endif %}
+{%- if ravendb.configuration.replication.retryReplicateAfterInSec is defined -%}
+    ,"Replication.RetryReplicateAfterInSec": {{ ravendb.configuration.replication.retryReplicateAfterInSec }}
+{% endif %}
+{%- if ravendb.configuration.replication.retryMaxTimeoutInSec is defined -%}
+    ,"Replication.RetryMaxTimeoutInSec": {{ ravendb.configuration.replication.retryMaxTimeoutInSec }}
+{% endif %}
+{%- if ravendb.configuration.replication.maxItemsCount is defined -%}
+    ,"Replication.MaxItemsCount": {{ ravendb.configuration.replication.maxItemsCount }}
+{% endif %}
+{%- if ravendb.configuration.replication.maxSizeToSendInMb is defined -%}
+    ,"Replication.MaxSizeToSendInMb": {{ ravendb.configuration.replication.maxSizeToSendInMb }}
+{% endif %}

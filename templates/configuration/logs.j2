@@ -1,0 +1,15 @@
+{%- if ravendb.configuration.logs.path is defined -%}
+    ,"Logs.Path": "{{ ravendb.configuration.logs.path }}"
+{% endif %}
+{%- if ravendb.configuration.logs.mode is defined -%}
+    ,"Logs.Mode": "{{ ravendb.configuration.logs.mode }}"
+{% endif %}
+{%- if ravendb.configuration.logs.useUtcTime is defined -%}
+    ,"Logs.UseUtcTime": {{ ravendb.configuration.logs.useUtcTime | lower }}
+{% endif %}
+{%- if ravendb.configuration.logs.maxFileSizeInMb is defined -%}
+    ,"Logs.MaxFileSizeInMb": {{ ravendb.configuration.logs.maxFileSizeInMb }}
+{% endif %}
+{%- if ravendb.configuration.logs.retentionTimeInHrs is defined -%}
+    ,"Logs.RetentionTimeInHrs": {{ ravendb.configuration.logs.retentionTimeInHrs }}
+{% endif %}

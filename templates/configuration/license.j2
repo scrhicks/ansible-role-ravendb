@@ -1,0 +1,15 @@
+{%- if ravendb.configuration.license.path is defined -%}
+    ,"License.Path": "{{ ravendb.configuration.license.path }}"
+{% endif %}
+{%- if ravendb.configuration.license.canActivate is defined -%}
+    ,"License.CanActivate": {{ ravendb.configuration.license.canActivate | lower }}
+{% endif %}
+{%- if ravendb.configuration.license.canForceUpdate is defined -%}
+    ,"License.CanForceUpdate": {{ ravendb.configuration.license.canForceUpdate | lower }}
+{% endif %}
+{%- if ravendb.configuration.license.canRenewLicense is defined -%}
+    ,"License.CanRenewLicense": {{ ravendb.configuration.license.canRenewLicense | lower }}
+{% endif %}
+{%- if ravendb.configuration.license.skipLeasingErrorsLogging is defined -%}
+    ,"License.SkipLeasingErrorsLogging": {{ ravendb.configuration.license.skipLeasingErrorsLogging | lower }}
+{% endif %}
